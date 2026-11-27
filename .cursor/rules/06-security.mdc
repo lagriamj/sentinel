@@ -1,0 +1,53 @@
+---
+description: Security requirements for the platform and scanning engine.
+alwaysApply: true
+---
+
+# Security Requirements
+
+Sentinel Scanner must only assess systems that the
+user owns or has explicit authorization to test.
+
+## Target Authorization
+
+- Require explicit authorization confirmation.
+- Restrict scans to registered targets.
+- Enforce approved host and port scope.
+- Validate every scan job independently.
+
+## SSRF Protection
+
+- Reject loopback addresses.
+- Reject private network ranges by default.
+- Reject link-local addresses.
+- Block cloud metadata endpoints.
+- Validate resolved IP addresses.
+- Revalidate every redirect.
+- Defend against DNS rebinding.
+- Prevent access to internal infrastructure.
+
+## Scanner Isolation
+
+- Run scanning engines in isolated containers.
+- Use restricted Linux capabilities.
+- Avoid privileged containers.
+- Apply CPU and memory limits.
+- Restrict network egress.
+- Never mount the Docker socket into scanner containers.
+
+## Authentication
+
+- Hash passwords securely using Argon2id.
+- Use short-lived access tokens.
+- Rotate refresh tokens.
+- Revoke compromised tokens.
+- Enforce authorization on every protected resource.
+
+## General
+
+- Never hardcode credentials.
+- Never expose secrets in logs.
+- Validate all external inputs.
+- Apply rate limits.
+- Audit security-sensitive operations.
+- Prefer secure defaults.

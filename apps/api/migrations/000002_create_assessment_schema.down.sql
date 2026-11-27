@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS vulnerabilities;
+DROP TABLE IF EXISTS scan_results;
+DROP TABLE IF EXISTS scan_jobs;
+DROP TABLE IF EXISTS scan_targets;
+DROP TABLE IF EXISTS users;

@@ -1,0 +1,56 @@
+---
+description: System architecture, module boundaries, and communication contracts.
+alwaysApply: true
+---
+
+# Architecture Guidelines
+
+## System Architecture
+
+Sentinel Scanner uses a modular monolith for the Go API
+and an independently deployable Python scanning service.
+
+## Responsibilities
+
+### Go API
+- Authentication and authorization.
+- Project management.
+- Target management.
+- Scan lifecycle management.
+- Job coordination.
+- Vulnerability management.
+- Reporting APIs.
+
+### Python Scanner
+- Scan execution.
+- OWASP ZAP integration.
+- Nuclei integration.
+- Custom security checks.
+- Result normalization.
+- Scan evidence collection.
+
+### React Frontend
+- User interface.
+- Project management.
+- Target management.
+- Scan monitoring.
+- Vulnerability visualization.
+
+## Communication
+
+- React communicates with Go through REST APIs.
+- Go coordinates scanner jobs through Redis.
+- Python workers receive explicit scan instructions.
+- Go owns persistent application data.
+- Scanner workers must not directly access the
+  application's PostgreSQL database.
+
+## Design Rules
+
+- Keep business logic outside HTTP handlers.
+- Separate infrastructure from domain logic.
+- Use dependency injection where appropriate.
+- Avoid circular dependencies.
+- Define clear interfaces between modules.
+- Use explicit request and response contracts.
+- Do not introduce microservices without justification.

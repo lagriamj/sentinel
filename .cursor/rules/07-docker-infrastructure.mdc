@@ -1,0 +1,39 @@
+---
+description: Docker, Docker Compose, and deployment standards.
+globs: infrastructure/**/*, docker-compose*.yml, **/Dockerfile, nginx/**/*
+alwaysApply: false
+---
+
+# Infrastructure Standards
+
+## Docker
+
+- Use multi-stage builds.
+- Use minimal runtime images.
+- Run services as non-root users.
+- Pin important image versions.
+- Use health checks.
+- Avoid unnecessary exposed ports.
+
+## Docker Compose
+
+- Separate application and infrastructure services.
+- Use persistent volumes.
+- Use private internal networks.
+- Keep secrets out of committed files.
+- Define resource limits where supported.
+- Use service health checks and appropriate dependencies.
+
+## Nginx
+
+- Use reverse proxy configuration.
+- Apply request size limits.
+- Configure sensible timeouts.
+- Do not expose internal services directly.
+
+## Deployment
+
+- Local development uses Docker Compose.
+- Production deployment will use a VPS.
+- Production configuration must be separate.
+- Never commit production credentials.

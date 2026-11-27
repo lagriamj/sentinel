@@ -1,0 +1,35 @@
+---
+description: Testing and quality assurance standards.
+globs: "**/*_test.go,**/test_*.py,**/*.{test,spec}.ts,**/*.{test,spec}.tsx"
+alwaysApply: false
+---
+# Testing Standards
+
+## Go
+- Use the standard testing package.
+- Use table-driven tests when appropriate.
+- Test handlers and application services.
+- Test authorization boundaries.
+- Test database operations.
+
+## Python
+- Use pytest.
+- Test scanner integrations independently.
+- Mock external processes.
+- Test malformed results and timeouts.
+- Test scope enforcement.
+
+## Frontend
+- Use Vitest.
+- Use React Testing Library.
+- Test important user workflows.
+- Test error and loading states.
+
+## Quality Requirements
+
+- Every critical business rule requires tests.
+- Every security boundary requires tests.
+- Do not ignore failing tests.
+- Do not remove tests to make builds pass.
+- Report untested functionality honestly.
+- Run relevant tests before considering a task complete.

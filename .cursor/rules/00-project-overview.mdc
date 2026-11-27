@@ -1,0 +1,70 @@
+---
+description: Sentinel Scanner project overview, goals, and global engineering principles.
+alwaysApply: true
+---
+
+# Sentinel Scanner
+
+Sentinel Scanner is an authorized Web Application and API
+Security Assessment Platform.
+
+## Primary Goal
+
+Build a modular security assessment platform capable of:
+
+- Registering web applications and APIs.
+- Discovering application endpoints.
+- Performing automated security assessments.
+- Integrating OWASP ZAP and Nuclei.
+- Normalizing vulnerability findings.
+- Managing security findings.
+- Generating security assessment reports.
+
+## Technology Stack
+
+Backend:
+- Go
+- Gin
+
+Scanning:
+- Python
+- OWASP ZAP
+- Nuclei
+
+Frontend:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+
+Infrastructure:
+- PostgreSQL
+- Redis
+- Docker Compose
+- Nginx
+
+## Engineering Principles
+
+- Write production-oriented code.
+- Prefer simple, maintainable solutions.
+- Follow established language conventions.
+- Avoid unnecessary abstractions.
+- Keep modules independently testable.
+- Prioritize security and correctness.
+- Do not implement features outside the requested scope.
+- Never assume an implementation is correct without testing.
+
+## AI Agent Behavior
+
+Before implementing a feature:
+
+1. Inspect the existing repository.
+2. Read relevant project rules.
+3. Understand existing architectural decisions.
+4. Identify affected modules.
+5. Propose an implementation plan for complex changes.
+
+Do not rewrite existing working implementations
+without a clear technical reason.
+
+Never silently change architectural decisions.

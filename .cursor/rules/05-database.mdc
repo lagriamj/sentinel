@@ -1,0 +1,42 @@
+---
+description: PostgreSQL schema, migrations, and data integrity standards.
+globs: apps/api/**/*.go, apps/api/migrations/**/*
+alwaysApply: false
+---
+
+# Database Standards
+
+## PostgreSQL
+
+Use PostgreSQL as the primary database.
+
+## Schema Guidelines
+
+- Use UUID primary keys.
+- Use explicit foreign keys.
+- Define unique constraints.
+- Add indexes based on query patterns.
+- Use appropriate column types.
+- Use timestamps for auditable entities.
+- Define deletion policies deliberately.
+
+## Migrations
+
+- Use versioned migrations.
+- Never modify previously applied migrations.
+- Keep up and down migrations consistent.
+- Avoid destructive migrations without explicit approval.
+
+## Data Integrity
+
+- Use transactions for related operations.
+- Enforce important constraints at database level.
+- Avoid storing duplicated derived data unnecessarily.
+- Use database constraints alongside application validation.
+
+## Security
+
+- Never store plaintext passwords.
+- Store token hashes instead of raw refresh tokens.
+- Never log credentials or secrets.
+- Use parameterized database queries.

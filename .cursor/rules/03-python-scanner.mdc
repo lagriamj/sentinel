@@ -1,0 +1,56 @@
+---
+description: Python scanning engine and security scanner integrations.
+globs: services/scanner/**/*.py
+alwaysApply: false
+---
+
+# Python Scanner Standards
+
+## Technology
+
+- Python 3.
+- Type hints.
+- Pydantic for data validation.
+- HTTPX for HTTP operations.
+- Asyncio where appropriate.
+- OWASP ZAP integration.
+- Nuclei integration.
+
+## Architecture
+
+Separate responsibilities into:
+
+- core/: shared scanner functionality.
+- jobs/: job execution.
+- engines/: scanning engine integrations.
+- scope/: target authorization and validation.
+- normalization/: common vulnerability schema.
+- reporting/: scan result preparation.
+
+## Scanner Integration
+
+- Keep each scanning engine independent.
+- Define common scanner interfaces.
+- Normalize engine-specific output.
+- Capture execution errors.
+- Implement timeouts.
+- Support graceful cancellation.
+- Record scan execution metadata.
+
+## Security
+
+- Never execute arbitrary user-supplied commands.
+- Avoid shell=True.
+- Use subprocess argument arrays.
+- Restrict filesystem access.
+- Enforce target scope.
+- Validate DNS resolution and redirects.
+- Apply concurrency and resource limits.
+
+## Testing
+
+- Use pytest.
+- Mock external scanner processes.
+- Test malformed scanner output.
+- Test timeout handling.
+- Test authorization boundaries.

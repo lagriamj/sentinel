@@ -1,0 +1,54 @@
+---
+description: React and TypeScript frontend development standards.
+globs: apps/web/src/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Frontend Standards
+
+## Technology
+
+- React.
+- TypeScript.
+- Vite.
+- Tailwind CSS.
+- TanStack Query.
+- Shadcn UI for standard controls. Layout, empty and loading states, and status treatment can stay custom when a Shadcn component does not fit.
+
+## Architecture
+
+Organize code by features.
+
+Use:
+- components/: reusable UI components.
+- features/: feature-specific modules.
+- hooks/: reusable hooks.
+- layouts/: application layouts.
+- lib/: shared utilities.
+- services/: API clients.
+- types/: shared TypeScript types.
+
+## Coding Standards
+
+- Prefer functional components.
+- Use strict TypeScript.
+- Avoid unnecessary any types.
+- Keep components focused.
+- Separate API communication from UI components.
+- Reuse common components.
+- Handle loading, error, and empty states.
+
+## UI Direction
+
+Build a professional cybersecurity SaaS interface.
+
+Design characteristics:
+- Dark-first interface.
+- Clean information hierarchy.
+- Professional dashboard layout.
+- Clear severity indicators.
+- Responsive design.
+- Consistent spacing and typography.
+
+Avoid excessive gradients, unnecessary animations,
+and decorative elements that reduce readability.

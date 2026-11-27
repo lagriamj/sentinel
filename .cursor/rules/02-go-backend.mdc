@@ -1,0 +1,64 @@
+---
+description: Go backend development standards using Gin.
+globs: apps/api/**/*.go
+alwaysApply: false
+---
+
+# Go Backend Standards
+
+## Framework
+- Use Go with Gin.
+- Follow idiomatic Go conventions.
+- Use the standard library where practical.
+- Use GORM for database access.
+- Use golang-migrate for schema migrations.
+
+## Project Structure
+
+Follow the existing structure:
+
+- cmd/: application entry points.
+- internal/: private application implementation.
+- internal/modules/: business modules.
+- internal/platform/: infrastructure.
+- migrations/: database migrations.
+
+## Coding Standards
+
+- Use meaningful package and variable names.
+- Handle errors explicitly.
+- Avoid unnecessary interfaces.
+- Avoid global mutable state.
+- Use context.Context for cancellation.
+- Pass dependencies explicitly.
+- Keep functions focused.
+
+## HTTP Layer
+
+Handlers must:
+- Parse and validate requests.
+- Invoke application services.
+- Return consistent responses.
+- Avoid embedding business logic.
+
+## Database
+
+- Use transactions for multi-step operations.
+- Define explicit constraints.
+- Avoid N+1 queries.
+- Use indexes appropriately.
+- Never rely exclusively on ORM auto-migration.
+
+## API
+
+- Use /api/v1 versioning.
+- Return appropriate HTTP status codes.
+- Implement pagination for collections.
+- Use consistent error responses.
+
+## Testing
+
+- Use Go testing package.
+- Test business logic independently.
+- Add integration tests for database operations.
+- Mock external dependencies when appropriate.

@@ -1,0 +1,6 @@
+# Non-secret job coordination contract.
+# The API publishes work. The scanner returns results.
+# The scanner must not read or write PostgreSQL.
+
+jobs: sentinel:scan-jobs
+results: sentinel:scan-results
